@@ -1,0 +1,137 @@
+#-------------------------------------------------------------------------------
+# BEHAVIOUR
+#-------------------------------------------------------------------------------
+
+set adjust-open width
+set selection-clipboard primary
+set scroll-full-overlap 0.1
+set zoom-min 10
+set zoom-max 100
+set zoom-step 10
+
+#-------------------------------------------------------------------------------
+# APPEARANCE
+#-------------------------------------------------------------------------------
+
+set guioptions s
+
+set statusbar-basename true
+set statusbar-h-padding 8
+set statusbar-v-padding 4
+set page-padding 4
+
+set font "Ubuntu Mono 11"
+
+#-------------------------------------------------------------------------------
+# COLORS
+#-------------------------------------------------------------------------------
+
+set default-bg "#fafafa"
+set default-fg "#555555"
+
+set inputbar-bg "#fafafa"
+set inputbar-fg "#333333"
+
+set statusbar-bg "#fafafa"
+set statusbar-fg "#333333"
+
+#set tabbar-bg "#fafafa"
+#set tabbar-fg "#333333"
+#set tabbar-focus-bg "#eaeaea"
+#set tabbar-focus-fg "#333333"
+
+set completion-bg "#fafafa"
+set completion-fg "#333333"
+set completion-group-bg "#f5f5f5"
+set completion-group-fg "#333333"
+set completion-highlight-bg "#ffe566"
+set completion-highlight-fg "#ffffff"
+
+#set notification-error-bg
+#set notification-error-fg
+#set notification-warning-bg
+#set notification-warning-fg
+
+set highlight-color "#707070"
+set highlight-active-color "#ffe566"
+set highlight-transparency 0.5
+
+set recolor false
+set recolor-keephue true
+set recolor-darkcolor "#c0c0c0"
+set recolor-lightcolor "#101010"
+
+#-------------------------------------------------------------------------------
+# BINDINGS
+#-------------------------------------------------------------------------------
+
+unmap =
+unmap -
+unmap +
+unmap _
+
+unmap q
+unmap p
+unmap r
+unmap R
+unmap z
+
+unmap f
+unmap i
+
+unmap d
+unmap u
+
+unmap h
+unmap l
+unmap k
+unmap j
+
+map [normal] <C-=> zoom in
+map [normal] <C--> zoom out
+map [normal] <C-0> adjust_window width
+
+map [normal] <C-q> quit
+map [normal] <C-p> print
+map [normal] <C-r> reload
+
+map [normal] r rotate rotate-cw
+map [normal] R rotate rotate-ccw
+
+map [normal] f toggle_fullscreen
+map [normal] i recolor
+
+map [normal] <C-d> navigate next
+map [normal] <C-u> navigate previous
+map [normal] <Space> navigate next
+map [normal] <S-Space> navigate previous
+
+map [normal] h scroll half-up
+map [normal] l scroll half-down
+map [normal] k scroll up
+map [normal] j scroll down
+
+map [fullscreen] <C-=> zoom in
+map [fullscreen] <C--> zoom out
+map [fullscreen] <C-0> adjust_window width
+
+map [fullscreen] <C-q> quit
+map [fullscreen] <C-p> print
+map [fullscreen] <C-r> reload
+
+map [fullscreen] r rotate rotate-cw
+map [fullscreen] R rotate rotate-ccw
+
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] i recolor
+
+map [fullscreen] <C-d> navigate next
+map [fullscreen] <C-u> navigate previous
+map [fullscreen] <Space> navigate next
+map [fullscreen] <S-Space> navigate previous
+
+map [fullscreen] h scroll half-up
+map [fullscreen] l scroll half-down
+map [fullscreen] k scroll up
+map [fullscreen] j scroll down
+
