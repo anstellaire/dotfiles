@@ -1,0 +1,41 @@
+!-------------------------------------------------------------------------------
+! TERMINAL COLORS
+!-------------------------------------------------------------------------------
+
+! special
+*.foreground:   #5a5a5a
+*.background:   #fafafa
+*.cursorColor:  #5a5a5a
+
+! black
+*.color0:       #333333
+*.color8:       #5a5a5a
+
+! red
+*.color1:       #f36361
+*.color9:       #f23030
+
+! green
+*.color2:       #76cb7a
+*.color10:      #29cc29
+
+! yellow
+*.color3:       #ffe566
+*.color11:      #ffe033
+
+! blue
+*.color4:       #81d0ff
+*.color12:      #33b8ff
+
+! magenta
+*.color5:       #fac7cf
+*.color13:      #fa96a6
+
+! cyan
+*.color6:       #60ddaa
+*.color14:      #2cde9a
+
+! white
+*.color7:       #888888
+*.color15:      #bababa
+

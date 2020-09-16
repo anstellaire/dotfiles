@@ -1,0 +1,8 @@
+feh --no-fehbg --bg-fill ~/.wallpapers/default
+
+xrdb ~/.config/xinit/xresources
+
+setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,compose:ralt"
+
+sxhkd -c ~/.config/sxhkd/sxhkdrc-bspwm ~/.config/sxhkd/sxhkdrc-apps &
+exec bspwm
