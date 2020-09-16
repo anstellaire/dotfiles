@@ -1,0 +1,7 @@
+configuration {
+    modi: "drun,run";
+    theme: "photon-yellow";
+    font: "Ubuntu Mono 14";
+    show-match: false;
+}
+
