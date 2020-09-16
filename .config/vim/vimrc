@@ -1,0 +1,113 @@
+"-------------------------------------------------------------------------------
+" GENERAL
+"-------------------------------------------------------------------------------
+
+set nocompatible              "disable compatibility with Vi
+
+set fileformats    =unix      "use Unix line endings
+set encoding       =utf-8     "use UTF8 charset
+
+set clipboard      =unnamed   "enable shared clipboard
+set history        =200       "number of commands to remember
+
+"-------------------------------------------------------------------------------
+" INTERFACE
+"-------------------------------------------------------------------------------
+
+set showcmd                   "show incomplete cmds down the bottom
+set showmode                  "show current mode down the bottom
+
+set wildmenu                  "set ctrl-n and ctrl-p to scroll through matches
+set wildchar       =<Tab>     "set <Key> to scrol through matches
+
+set splitbelow                "open new file below when vertical splitting
+set splitright                "open new file right when horizontal splitting
+
+set laststatus     =2         "show status line
+set linespace      =5         "set space between lines
+
+set number                    "show line numbers
+set numberwidth    =5         "set width of line number columnt
+
+set wrap
+set nolist
+set linebreak
+set showbreak      =…
+
+"-------------------------------------------------------------------------------
+" SEARCH
+"-------------------------------------------------------------------------------
+
+set incsearch                 "find as you type
+set hlsearch                  "highlight matches in search
+
+set ignorecase                "ignore case in search
+set smartcase                 "only ignore case when all letters are lowercase
+
+set scrolloff      =5         "number of lines to keep above/below cursor
+
+"-------------------------------------------------------------------------------
+" INDENTATION
+"-------------------------------------------------------------------------------
+
+set autoindent                "auto indent based on previous line
+
+set tabstop        =4         "width of tab character
+set softtabstop    =0
+set shiftwidth     =4         "width of indent in normal mode
+set expandtab                 "expand tabs to spaces
+
+set backspace      =2         "use standard backspace behavior
+
+"-------------------------------------------------------------------------------
+" FOLDING
+"-------------------------------------------------------------------------------
+
+set foldmethod     =syntax    "set syntax defined folding
+set foldlevelstart =99        "set no automatic folding
+
+"-------------------------------------------------------------------------------
+" COLOR AND HILIGHTING
+"-------------------------------------------------------------------------------
+
+set showmatch                 "show matching parenthesis
+
+filetype on                   "enable filetype detection
+filetype plugin on            "enable plugin loading for detected filetype
+filetype indent on            "enable indent settings for detected filetype
+
+color desert                  "set desert syntax coloring
+
+syntax on                     "enable syntax hilighting
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
+"-------------------------------------------------------------------------------
+" GUI INTERFACE
+"-------------------------------------------------------------------------------
+
+set guioptions-=m             "remove menu bar
+set guioptions-=T             "remove toolbar
+set guioptions-=r             "remove right-hand scroll bar
+set guioptions-=l             "remove left-hand scroll bar
+
+"-------------------------------------------------------------------------------
+" VIM CACHE|DATA|CONFIG PATHS
+"-------------------------------------------------------------------------------
+
+set undodir=$XDG_CACHE_HOME/vim/undo
+set directory=$XDG_CACHE_HOME/vim/swap
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set viewdir=$XDG_CACHE_HOME/vim/view
+set viminfo+=n$XDG_DATA_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+
+let g:netrw_home=$XDG_DATA_HOME.'/vim'
+
+"-------------------------------------------------------------------------------
+" PLUGINS
+"-------------------------------------------------------------------------------
+
+" let g:clang_library_path= '/usr/lib64/libclang.so.7'
+
