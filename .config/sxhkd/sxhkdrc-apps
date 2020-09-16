@@ -1,0 +1,41 @@
+#-------------------------------------------------------------------------------
+# FUNCTIONAL KEYS
+#-------------------------------------------------------------------------------
+
+# audio
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    amixer sset Master {toggle,unmute 5-,unmute 5+}
+
+XF86Audio{Prev,Next}
+    cmus-remote -{r,n}
+
+XF86Audio{Stop,Play}
+    cmus-remote -{s,u}
+
+# brightness
+XF86MonBrightness{Down,Up}
+    {st,st}
+
+#-------------------------------------------------------------------------------
+# SCREEN CAPTURE
+#-------------------------------------------------------------------------------
+
+# screen capture
+Print
+    scrot -q 100 'screenshot_%F_%T.png'
+
+shift + Print
+    scrot -ub -q 100 'screenshot_%F_%T.png'
+
+#-------------------------------------------------------------------------------
+# APPS
+#-------------------------------------------------------------------------------
+
+# terminal emulator
+super + Return
+    st
+
+# program launcher
+super + d
+    rofi -show drun
+

@@ -1,0 +1,106 @@
+#-------------------------------------------------------------------------------
+# FOCUS NEXT|PREVIOUS WINDOW|DESKTOP|MONITOR
+#-------------------------------------------------------------------------------
+
+# focus the next|previous window (within desktop)
+super + {bracketleft,bracketright}
+    bspc node -f {prev,next}.local.!hidden.window
+
+# focus the next|previous desktop (within monitor)
+super + shift + {bracketleft,bracketright}
+    bspc desktop -f {prev,next}.occupied.local
+
+#-------------------------------------------------------------------------------
+# FOCUS THE LAST WINDOW|DESKTOP|MONITOR
+#-------------------------------------------------------------------------------
+
+# focus the last window (within desktop)
+super + Tab
+    bspc node -f last.local.!hidden.window
+
+# focus the last desktop (within monitor)
+super + grave
+    bspc desktop -f last.occupied.local
+
+#-------------------------------------------------------------------------------
+# FOCUS|MOVE A NODE
+#-------------------------------------------------------------------------------
+
+# focus|move a node in the given direction
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# focus|move a node to the given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+#-------------------------------------------------------------------------------
+# RESIZE|MOVE A WINDOW
+#-------------------------------------------------------------------------------
+
+# resize a window
+super + alt + {h,j,k,l}
+    {                                           \
+        dt=right;  df=left;   dx=-20; dy=0;   , \
+        dt=bottom; df=top;    dx=0;   dy=20;  , \
+        dt=bottom; df=top;    dx=0;   dy=-20; , \
+        dt=right;  df=left;   dx=20;  dy=0;     \
+    }                                           \
+    bspc node --resize $dt $dx $dy || bspc node --resize $df $dx $dy
+
+#-------------------------------------------------------------------------------
+# CHANGE WINDOW STATE | DESKTOP LAYOUT
+#-------------------------------------------------------------------------------
+
+# close|kill a node
+super + {_,shift + }w
+    bspc node -{c,k}
+
+# change window state
+super + g
+    bspc node -t ~floating
+
+# change desktop layout
+super + v
+    bspc desktop -l next
+
+#-------------------------------------------------------------------------------
+# PRESELECT DIRECTION
+#-------------------------------------------------------------------------------
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# cancel the preselection (within desktop)
+super + ctrl + n
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# send a window to the newest preselected node
+super + ctrl + m
+    bspc node -n newest.!automatic
+
+#-------------------------------------------------------------------------------
+# FOCUS PARENT
+#-------------------------------------------------------------------------------
+
+# select the parent node
+super + p
+    bspc node -f @parent
+
+# cancel the parent selection (within desktop)
+super + n
+    bspc node -f last.local.descendant_of.!hidden.window
+
+# send a window to the biggest window node
+super + m
+    bspc node -s biggest.local.!hidden.window
+
+#-------------------------------------------------------------------------------
+# QUIT|RESTART BSPWM
+#-------------------------------------------------------------------------------
+
+# quit|restart bspwm
+super + alt + {q,r}
+    bspc {quit,wm -r}
+
